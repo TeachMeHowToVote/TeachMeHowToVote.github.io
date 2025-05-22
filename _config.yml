@@ -1,3 +1,3 @@
-remote_theme: pages-themes/midnight@v0.2.0
-plugins:
-- jekyll-remote-theme
+theme: jekyll-theme-minimal
+title: TMHTV Support
+description: Support Page for Teach Me How To Vote
