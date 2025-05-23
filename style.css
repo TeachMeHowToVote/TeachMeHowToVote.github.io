@@ -1,21 +1,74 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
+/* === Custom Theme for "Teach Me How To Vote" === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #004990;
+  --secondary-color: #e63946;
+  --background-color: #f7f9fc;
+  --text-color: #222;
+  --link-color: var(--primary-color);
+  --button-bg: var(--primary-color);
+  --button-hover: #003366;
+  --button-text: #fff;
+  --border-radius: 8px;
 }
 
-header {
-  background: #003366;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e4e4e4;
+    --link-color: #ffee8d;
+    --button-bg: #004990;
+    --button-hover: #007acc;
+  }
+
+  header, footer {
+    background-color: #1e1e1e !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  margin-top: auto;
+  background-color: var(--primary-color);
   color: white;
-  padding: 1em;
   text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0;
 }
 
 nav a {
-  margin: 0 10px;
-  color: #ccc;
+  color: white;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -24,15 +77,76 @@ nav a:hover {
 }
 
 main {
-  padding: 2em;
   max-width: 800px;
-  margin: auto;
-  background: white;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background: #eee;
-  font-size: 0.9em;
+section {
+  margin-bottom: 2rem;
+}
+
+h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button, .btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--button-hover);
+}
+
+form {
+  margin-top: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #e0e0e0;
 }
